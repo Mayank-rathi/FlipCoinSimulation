@@ -6,8 +6,8 @@ declare -A Singlet
 head=0;
 tail=0;
 
-read -p "How Many Time You Want To Flip Coin: " i
-for((i=0;i<=10;i++))
+read -p "How Many Time You Want To Flip Coin: " n
+for((i=0;i<$n;i++))
 do
 	if [	$((RANDOM%2)) -eq 1 ]
 	then
@@ -18,7 +18,7 @@ do
 done
 echo "Keys ${!Singlet[@]}"
 echo "count ${Singlet[@]}"
-echo	"Percentage of Head: `echo "scale=2; ${Singlet[head]}*100/$i" | bc`"%
-echo	"Percantage of Tail: `echo "scale=2; ${Singlet[tail]}*100/$i" | bc`"%
+echo	"Percentage of Head: `echo "scale=2; ${Singlet[head]}*100/$n" | bc`"%
+echo	"Percantage of Tail: `echo "scale=2; ${Singlet[tail]}*100/$n" | bc`"%
 
 
