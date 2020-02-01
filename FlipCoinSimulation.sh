@@ -1,10 +1,5 @@
 #!/bin/bash 
 echo "Welcome To Flip Coin Simulation"
-#Declaring A dictionary
-declare -A Combination
-
-#Variables
-#!/bin/bash 
 declare -A coinsDictionary
 #Function to store flip count with respective coin sides
 function flipCoin(){
@@ -41,12 +36,10 @@ function calculatePercentage()
 		echo "Percentage :	"${coinsDictionary[@]}
 }
 
-
-
 #User input for Number flip and fliping coin for singlet and doublet
 read -p "Enter how times you want to flip coin: " noOfFlip
-read -p "1)Singlet 2)Doublet Enter your choice: " choice
-#Case For Singlet and Doublet
+read -p "1)Single Coin 2)Double Coin 3)Triple Coin Enter your choice: " choice
+#Case For Singlet and Doublet or Triplet
 case $choice in
 	1)
 		noOfCoin=1
@@ -55,6 +48,11 @@ case $choice in
 		;;
 	2)
 		noOfCoin=2
+		flipCoin $noOfFlip $noOfCoin
+		calculatePercentage
+		;;
+	3)
+		noOfCoin=3
 		flipCoin $noOfFlip $noOfCoin
 		calculatePercentage
 		;;
